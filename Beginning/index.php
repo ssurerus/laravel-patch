@@ -3,9 +3,9 @@ require 'functions.php';
 //require 'router.php';
 require 'Database.php';
 
+$config = require 'config.php';
 
-
-$db = new Database();
+$db = new Database($config['database']);
 $products = $db->query("select * from products");
 
 foreach ($products as $product) {
